@@ -18,10 +18,25 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         body: JSON.stringify({ content: JSON.stringify(formData, null, 2) }),
     }).then(response => {
         if (response.ok) {
-            alert('Регистрация прошла успешно!');
+            showNotification('Регистрация прошла успешно!', 'success'); // Показываем уведомление об успехе
             window.location.href = 'payments.html'; // Переход на success.html
         } else {
-            alert('Ошибка при регистрации.');
+            showNotification('Ошибка при регистрации.', 'error'); // Показываем уведомление об ошибке
         }
+    }).catch(error => {
+        console.error('Ошибка сети:', error);
+        showNotification('Произошла ошибка. Пожалуйста, попробуйте еще раз.', 'error'); // Показываем уведомление о сети
     });
 });
+
+// Функция для отображения уведомлений
+function showNotification(message, type) {
+    const notification = document.getElementById('notification'); // Элемент для уведомлений
+    notification.textContent = message;
+    notification.className = type; // Добавляем класс для стилизации
+    notification.style.display = 'block'; // Показываем уведомление
+
+    setTimeout(() => {
+        notification.style.display = 'none'; // Скрываем уведомление через 3 секунды
+    }, 3000);
+}
