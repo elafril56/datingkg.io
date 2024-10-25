@@ -8,7 +8,7 @@ function subscribe(plan) {
     }).then(response => {
         if (response.ok) {
             alert('Подписка оформлена успешно!');
-            window.location.href = 'http://127.0.0.1:5500/card.html'; // Переход на success.html
+            window.location.href = 'card.html'; // Переход на success.html
         } else {
             alert('Ошибка при оформлении подписки.');
         }
