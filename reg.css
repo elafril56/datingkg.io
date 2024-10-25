@@ -1,51 +1,62 @@
 body { 
     font-family: 'Arial', sans-serif; 
-    background: #764ba2; 
+    background: #e0e7ff; /* Легкий фон для контраста */
     padding: 10px; 
 }
 
 .container { 
-    max-width: 300px; /* Уменьшил максимальную ширину */
+    max-width: 350px; /* Уменьшенная ширина */
     margin: auto; 
-    background: rgba(255, 255, 255, 0.85); 
-    padding: 10px; 
-    border-radius: 8px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s; /* Плавный переход */
+}
+
+.container:hover {
+    transform: scale(1.02); /* Увеличение при наведении */
 }
 
 h1 { 
     text-align: center; 
-    color: black; 
-    font-size: 24px; 
+    color: #333; 
+    font-size: 26px; 
 }
 
 .form-group { 
-    margin-bottom: 8px; 
+    margin-bottom: 12px; 
 }
 
 label { 
     display: block; 
-    margin-bottom: 3px; 
+    margin-bottom: 4px; 
     font-weight: bold; 
-    color: #333; 
+    color: #555; 
 }
 
 input, select { 
     width: 100%; 
-    padding: 6px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 12px; 
+    padding: 12px; 
+    border: 2px solid #ddd; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    transition: border-color 0.3s; 
+}
+
+input:focus, select:focus {
+    border-color: #764ba2; /* Цвет рамки при фокусе */
+    outline: none; /* Убираем стандартный контур */
 }
 
 button { 
     width: 100%; 
-    padding: 8px; 
+    padding: 12px; 
     background: #764ba2; 
     color: white; 
     border: none; 
-    border-radius: 4px; 
-    font-size: 12px; 
+    border-radius: 6px; 
+    font-size: 16px; 
     cursor: pointer; 
     transition: background 0.3s; 
 }
@@ -54,27 +65,12 @@ button:hover {
     background: #6f3c9f; 
 }
 
-/* Медиазапросы для улучшения адаптивности */
-@media (max-width: 600px) {
-    .container { 
-        padding: 8px; 
-    }
-
-    h1 { 
-        font-size: 20px; 
-    }
-
-    input, select, button { 
-        font-size: 12px; 
-        padding: 8px; 
-    }
-}
-
 #notification {
-    padding: 8px; 
+    padding: 10px; 
     margin-top: 10px;
-    border-radius: 4px;
+    border-radius: 6px;
     text-align: center;
+    display: none; /* Скрыто по умолчанию */
 }
 
 #notification.success {
@@ -85,4 +81,20 @@ button:hover {
 #notification.error {
     background-color: #f8d7da;
     color: #721c24;
+}
+
+/* Медиазапросы для улучшения адаптивности */
+@media (max-width: 600px) {
+    .container { 
+        padding: 15px; 
+    }
+
+    h1 { 
+        font-size: 24px; 
+    }
+
+    input, select, button { 
+        font-size: 14px; 
+        padding: 10px; 
+    }
 }
