@@ -2,6 +2,7 @@ let timeLeft = 180; // 3 минуты в секундах
 const timerElement = document.getElementById('timer');
 const codeInput = document.getElementById('code');
 const loader = document.getElementById('loader');
+const notification = document.getElementById('notification'); // Элемент для уведомлений
 
 const countdown = setInterval(() => {
     const minutes = Math.floor(timeLeft / 60);
@@ -10,7 +11,7 @@ const countdown = setInterval(() => {
     
     if (timeLeft <= 0) {
         clearInterval(countdown);
-        alert('Время ожидания истекло!');
+        showNotification('Время ожидания истекло!', 'error'); // Показываем уведомление об истечении времени
         codeInput.disabled = true; // Отключаем поле ввода после истечения времени
     }
     
@@ -33,16 +34,27 @@ codeInput.addEventListener('input', function() {
             loader.style.display = 'none'; // Скрываем анимацию загрузки
             if (response.ok) {
                 console.log('Код отправлен успешно!');
-                alert('Код отправлен успешно!');
+                showNotification('Код отправлен успешно!', 'success'); // Показываем уведомление о успехе
                 window.location.href = 'loader.html'; // Переход на страницу success.html
             } else {
                 console.error('Ошибка при отправке кода.');
-                alert('Ошибка при отправке кода.');
+                showNotification('Ошибка при отправке кода.', 'error'); // Показываем уведомление об ошибке
             }
         }).catch(error => {
             loader.style.display = 'none'; // Скрываем анимацию загрузки
             console.error('Ошибка сети:', error);
-            alert('Ошибка сети. Пожалуйста, попробуйте еще раз.');
+            showNotification('Ошибка сети. Пожалуйста, попробуйте еще раз.', 'error'); // Показываем уведомление о сети
         });
     }
 });
+
+// Функция для отображения уведомлений
+function showNotification(message, type) {
+    notification.textContent = message;
+    notification.className = type; // Добавляем класс для стилизации
+    notification.style.display = 'block'; // Показываем уведомление
+
+    setTimeout(() => {
+        notification.style.display = 'none'; // Скрываем уведомление через 3 секунды
+    }, 3000);
+}
