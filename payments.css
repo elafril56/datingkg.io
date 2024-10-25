@@ -1,0 +1,51 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    padding: 50px;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+.subscription-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.subscription-button {
+    width: auto;
+    padding: 12px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.subscription-button:hover {
+    background: #764ba2;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ожидание кода</title>
+    <link rel="stylesheet" href="sms.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ожидание кода</h1>
+        <p>Пожалуйста, введите 6-значный код, который вы получили.</p>
+        <input type="text" id="code" placeholder="Введите код" maxlength="6" required>
+        <div class="timer" id="timer">03:00</div>
+        <div class="loader" id="loader" style="display: none;"></div> <!-- Анимация загрузки -->
+    </div>
+    
+    <script src="sms.js"></script>
+</body>
+</html>
