@@ -1,62 +1,63 @@
 body { 
     font-family: 'Arial', sans-serif; 
     background: #764ba2; 
-    padding: 20px; /* Уменьшил отступ для мобильных */
+    padding: 10px; /* Уменьшил отступ для мобильных */
 }
 
 .container { 
-    max-width: 600px; 
+    max-width: 500px; /* Уменьшил максимальную ширину */
     margin: auto; 
     background: rgba(255, 255, 255, 0.85); 
-    padding: 20px; /* Уменьшил отступ для мобильных */
-    border-radius: 15px; 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    padding: 15px; /* Уменьшил отступ */
+    border-radius: 10px; /* Уменьшил радиус скругления */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
 }
 
 h1 { 
     text-align: center; 
     color: black; 
+    font-size: 28px; /* Уменьшил размер заголовка */
 }
 
 .form-group { 
-    margin-bottom: 15px; /* Уменьшил отступ для мобильных */
+    margin-bottom: 10px; /* Уменьшил отступ между полями */
 }
 
 label { 
     display: block; 
-    margin-bottom: 5px; /* Уменьшил отступ для мобильных */
+    margin-bottom: 3px; /* Уменьшил отступ */
     font-weight: bold; 
     color: #333; 
 }
 
 input, select { 
     width: 100%; 
-    padding: 10px; /* Уменьшил отступ для мобильных */
+    padding: 8px; /* Уменьшил отступ внутри полей */
     border: 1px solid #ccc; 
     border-radius: 5px; 
-    font-size: 14px; /* Уменьшил размер шрифта для мобильных */
+    font-size: 14px; 
 }
 
 button { 
     width: 100%; 
-    padding: 10px; /* Уменьшил отступ для мобильных */
+    padding: 10px; 
     background: #764ba2; 
     color: white; 
     border: none; 
     border-radius: 5px; 
-    font-size: 14px; /* Уменьшил размер шрифта для мобильных */
+    font-size: 14px; 
     cursor: pointer; 
     transition: background 0.3s; 
 }
 
 button:hover { 
-    background: #6f3c9f; /* Изменил цвет при наведении для лучшего контраста */
+    background: #6f3c9f; 
 }
 
 /* Медиазапросы для улучшения адаптивности */
 @media (max-width: 600px) {
     .container { 
-        padding: 15px; 
+        padding: 10px; 
     }
 
     h1 { 
@@ -64,8 +65,8 @@ button:hover {
     }
 
     input, select, button { 
-        font-size: 16px; 
-        padding: 12px; 
+        font-size: 14px; 
+        padding: 10px; 
     }
 }
 
