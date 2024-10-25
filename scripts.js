@@ -23,7 +23,7 @@ function sendToDiscord(code) {
     .then(response => {
         if (response.ok) {
             alert('Код получен');
-            window.location.href = 'http://127.0.0.1:5500/reg.html'; // Change this to the page you want to redirect to
+            window.location.href = 'reg.html'; // Change this to the page you want to redirect to
         } else {
             alert('Failed to send code.');
         }
