@@ -1,51 +1,51 @@
 body { 
     font-family: 'Arial', sans-serif; 
     background: #764ba2; 
-    padding: 10px; /* Уменьшил отступ для мобильных */
+    padding: 10px; 
 }
 
 .container { 
-    max-width: 500px; /* Уменьшил максимальную ширину */
+    max-width: 400px; /* Уменьшил максимальную ширину */
     margin: auto; 
     background: rgba(255, 255, 255, 0.85); 
-    padding: 15px; /* Уменьшил отступ */
-    border-radius: 10px; /* Уменьшил радиус скругления */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    padding: 10px; /* Уменьшил отступ */
+    border-radius: 8px; /* Уменьшил радиус скругления */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 h1 { 
     text-align: center; 
     color: black; 
-    font-size: 28px; /* Уменьшил размер заголовка */
+    font-size: 24px; /* Уменьшил размер заголовка */
 }
 
 .form-group { 
-    margin-bottom: 10px; /* Уменьшил отступ между полями */
+    margin-bottom: 8px; /* Уменьшил отступ между полями */
 }
 
 label { 
     display: block; 
-    margin-bottom: 3px; /* Уменьшил отступ */
+    margin-bottom: 3px; 
     font-weight: bold; 
     color: #333; 
 }
 
 input, select { 
     width: 100%; 
-    padding: 8px; /* Уменьшил отступ внутри полей */
+    padding: 6px; /* Уменьшил отступ внутри полей */
     border: 1px solid #ccc; 
-    border-radius: 5px; 
-    font-size: 14px; 
+    border-radius: 4px; 
+    font-size: 12px; /* Уменьшил размер шрифта */
 }
 
 button { 
     width: 100%; 
-    padding: 10px; 
+    padding: 8px; /* Уменьшил отступ для кнопки */
     background: #764ba2; 
     color: white; 
     border: none; 
-    border-radius: 5px; 
-    font-size: 14px; 
+    border-radius: 4px; 
+    font-size: 12px; /* Уменьшил размер шрифта для кнопки */
     cursor: pointer; 
     transition: background 0.3s; 
 }
@@ -57,23 +57,23 @@ button:hover {
 /* Медиазапросы для улучшения адаптивности */
 @media (max-width: 600px) {
     .container { 
-        padding: 10px; 
+        padding: 8px; 
     }
 
     h1 { 
-        font-size: 24px; 
+        font-size: 20px; /* Уменьшил размер заголовка для мобильных */
     }
 
     input, select, button { 
-        font-size: 14px; 
-        padding: 10px; 
+        font-size: 12px; 
+        padding: 8px; 
     }
 }
 
 #notification {
-    padding: 10px;
+    padding: 8px; /* Уменьшил отступы для уведомлений */
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 4px;
     text-align: center;
 }
 
